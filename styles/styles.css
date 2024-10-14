@@ -1,0 +1,805 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    position: relative;
+    align-items: center;
+    /* min-height: 15%; */
+    height: 105px;
+    background-color: rgb(172, 241, 102);
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: green;
+    margin: 5px;
+}
+
+#mainContainer {
+    /* height: 80%; */
+    width: 100%;
+    background-image: url(../Images/Background\ Image\ Index.jpg);
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    opacity: 90%;
+    overflow-y: auto;
+}
+
+#footer {
+    background-color: rgb(172, 241, 102);
+    position: relative;
+    height: 5%;
+}
+
+.logoWrapper {
+    position: absolute;
+    left: 10%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    width: 30%;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    color: green;
+}
+
+.nav-links li a:hover {
+    color: yellow;
+    transition: .3s;
+}
+
+nav ul li ul {  
+    display: none;
+}
+
+/* Displays sub menus on hover */
+nav ul li:hover ul {
+    width: 150px;  
+    display: block;  
+    float: left;  
+    position: absolute;  
+    left: 130px;  
+    top: 20px;   
+    background: rgb(100, 204, 100);  
+    border: 1px solid green;
+    z-index: 9999 !important;
+}
+
+nav ul li:hover ul li {     
+    display: inline;  
+    padding: 5px;  /* This is to change the size of the sub menu */
+    float: left;  
+    position: relative;
+    font-weight: normal;  
+    background: none;
+}
+
+nav ul li:hover ul li a  {  
+    padding: 0px;  
+    font-weight: normal;  
+    width: auto;  
+    float: none;  
+    padding: 0px 0 0px 9px;  
+    display: block;  
+    height: 25px;  
+    font-size: 18px;  
+    border-left: none !important;  
+    line-height: 25px;  
+    border-right: none !important;  
+}
+
+.sub-nav-links {
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(247, 247, 100);
+    background-color: rgb(247, 247, 100, 0.7);
+    border-radius: 20px;
+    padding: 20px;
+    margin-inline: auto;
+    margin-top: 80px;
+    width: fit-content;
+    align-items: center;
+}
+
+.intro-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(247, 247, 100);
+    background-color: rgb(247, 247, 100, 0.7);
+    border-radius: 20px;
+    margin-inline: auto;
+    margin-top: 80px;
+    width: fit-content;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.back-arrow {
+    display: none;
+}
+
+@media screen and (min-width:882px) and (max-width:1024px) {
+    .nav-links {
+        width: 50%;
+    }
+
+    .nav-links li a {
+        font-size: 14px;      
+    }
+
+    nav ul li:hover ul li a {
+        font-size: 14px;
+    }
+
+    nav ul li:hover ul {
+        width: 117px;  
+        display: block;  
+        float: left;  
+        position: absolute;  
+        left: calc(46% - 150px);
+        top: 16px;   
+        background: rgb(100, 204, 100);  
+        border: 1px solid green;
+        z-index: 9999 !important;
+    }
+}
+
+@media screen and (max-width:882px) {
+    .nav-links {
+        width: 60%;
+    }
+
+    .nav-links li a {
+        font-size: 14px;      
+    }
+
+    nav ul li:hover ul li a {
+        font-size: 14px;
+    }
+
+    nav ul li:hover ul {
+        width: 117px;  
+        display: block;  
+        float: left;  
+        position: absolute;  
+        left: calc(45% - 150px);
+        top: 16px;   
+        background: rgb(100, 204, 100);  
+        border: 1px solid green;
+        z-index: 9999 !important;
+    }
+}
+
+@media screen and (min-width:1025px) and (max-width:1200px) {
+    .nav-links {
+        width: 60%;
+    }
+    nav ul li:hover ul {
+        width: 150px;  
+        display: block;  
+        float: left;  
+        position: absolute;  
+        left: calc(40% - 160px);
+        top: 20px;   
+        background: rgb(100, 204, 100);  
+        border: 1px solid green;
+        z-index: 9999 !important;
+    }
+}
+
+@media screen and (min-width:1201px) {
+    .nav-links {
+        width: 50%;
+    }
+    nav ul li:hover ul {
+        width: 150px;  
+        display: block;  
+        float: left;  
+        position: absolute;  
+        left: calc(31% - 100px);  
+        top: 20px;   
+        background: rgb(100, 204, 100);  
+        border: 1px solid green;
+        z-index: 9999 !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .textC {
+        line-height: 1;
+        font-size: small;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 0%;
+        background-color: rgb(172, 241, 102);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(100%);
+        z-index: 999;
+    }
+
+    .sub-nav-links.active {
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 0%;
+        background-color: rgb(172, 241, 102);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(0%);   
+        z-index: 999;
+    }
+
+    .sub-nav-links.active {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        right: 0;
+        width: 30%;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    .sub-nav-links.active li {
+        list-style: none;
+        display: inline-block;
+    }
+    
+    .sub-nav-links.active li a {
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        font-size: 1rem;
+        color: green;
+    }
+    
+    .sub-nav-links.active li a:hover {
+        color: yellow;
+        transition: .3s;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .back-arrow.active {   
+        position: absolute;
+        display: block;
+        cursor: pointer;
+        left: 70vw;
+        z-index: 999;
+        font-size: larger;
+        color:green;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        z-index: 999;
+    }
+
+    .burger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #mainContainer {
+        opacity: 1;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+#mb-10 {
+    margin-bottom: 10px;
+}
+
+#map-marker {
+    color: red;
+}
+
+#phone {
+    color: blue;
+}
+
+#envelope {
+    color: rgba(66, 190, 25, 0.619);
+}
+
+#mb-5 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.card ul li i:hover {
+    margin-top: -3px;
+}
+
+#mainActivityContainer {
+    /* height: calc(95% - 105px);  */
+    width: 100%;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 100%;
+    overflow-y: hidden;
+}
+
+.mySlides1,
+.mySlides2,
+.mySlides3,
+.mySlides4,
+.mySlides5,
+.mySlides6 {
+    display: none
+}
+
+img {
+    vertical-align: middle;
+}
+
+
+.carouselLeft {
+    position: relative;
+    /* height: 500px; */
+    width: 70%;
+    opacity: 100%;
+    padding-left: 10px;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 10;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover,
+.next:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+a.prev,
+a.next {
+    text-decoration: none;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    /* Another option is: contain */
+}
+
+.carousel_track-container {
+    /* background: rgb(172, 241, 102); */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel_button {
+    /* position: absolute;
+    top: 50%;
+    background: transparent;
+    background-color: white;
+    opacity: 0.5;
+    transform: translateY(-50%);
+    border: 0;
+    z-index: 999;  */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    opacity: 0.5;
+}
+
+
+button.carousel_button:hover {
+    color: white;
+}
+
+.carousel_button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel_button_contain_image_opacity {
+    opacity: 1;
+    z-index: 1000;
+}
+
+.carousel_button img {
+    width: 20px;
+}
+
+.carouselLeft_button-left {
+    left: 10px;
+    z-index: 999;
+}
+
+.carouselRight_button-left {
+    z-index: 999;
+}
+
+.carouselLeft_button-right {
+    right: 0px;
+}
+
+.carouselRight_button-right {
+    right: 10px;
+}
+
+.carousel_nav {
+    /* background: rgb(172, 241, 102); */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel_indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgb(0, 0, 0, 0.3);
+    margin: 0 12px;
+}
+
+.carousel_indicator.current-slide {
+    background: rgb(0, 0, 0, 0.75);
+}
+
+.is-hidden {
+    display: none;
+}
+
+
+#mainHomepageContainer {
+    height: 80%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.gif {
+    position: fixed;
+    opacity: 0.7;
+    width: inherit;
+    height: 100%;
+    object-fit: cover;
+}
+
+.alignTextToCenter {
+    text-align: center;
+}
+
+.activityCardLeft {
+    background-color: rgb(247, 247, 100);
+    background-color: rgb(247, 247, 100, 0.7);
+    border-radius: 20px;
+    padding: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30%;
+    overflow: auto;
+    display: flex;
+}
+
+.activityCardRight {
+    background-color: rgb(247, 247, 100);
+    background-color: rgb(247, 247, 100, 0.7);
+    border-radius: 20px;
+    padding: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30%;
+    overflow: auto;
+    display: flex;
+}
+
+
+.carouselRight {
+    position: relative;
+    /* height: 500px; */
+    width: 70%;
+    opacity: 100%;
+    padding-right: 10px;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#mainContactContainer {
+    /* height: 85%; */
+    height: calc(100% - 105px);
+    max-width: 100%;
+    background-image: url(../Images/Επικοινωνία/20221027_100251040.webp);
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 100%;
+    overflow-y: hidden;
+    background-position: center;
+}
+
+#mainServiceContainer {
+    /* height: 80%; */
+    height: calc(95% - 105px);
+    max-width: 100%;
+    background-image: url(../Images/Υπηρεσίες/20221027_100219220.webp);
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 100%;
+    overflow-y: hidden;
+    background-position: center;
+}
+
+.size-13 {
+    font-size: 13px;
+    display: flex;
+}
+
+.plag {
+    color: green;
+    padding-left: 25px;
+}
+
+.footer-flex {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.sec {
+    display: flex;
+}
+
+.ul-ident {
+    padding-left: 25px;
+    font-size: 17px;
+}
+
+/* .card ul li i:hover {
+    margin-top: -3px;
+} */
+
+/* footer ul.footer-flex li i:hover {
+    margin-top: -3px;
+} */
+
+footer ul li i:hover {
+    margin-top: -3px;
+}
+
+li img:hover {
+    cursor: pointer;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+}
+
+.max-height {
+    max-height: 50vh;
+    min-height: 300px;
+}
+
+.textC {
+    margin: auto;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1219px) {
+    div.activityCardLeft::-webkit-scrollbar, div.activityCardRight::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    div.activityCardLeft::-webkit-scrollbar-track, div.activityCardRight::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    div.activityCardLeft::-webkit-scrollbar-thumb, div.activityCardRight::-webkit-scrollbar-thumb {
+        background: rgb(172, 241, 102, 95%);
+    }
+
+    div.activityCardLeft::-webkit-scrollbar-thumb:hover, div.activityCardRight::-webkit-scrollbar-thumb:hover {
+        background: rgb(172, 241, 102, 95%);
+    }
+
+    .activityCardLeft {
+        font-size: small;
+    }
+    .activityCardRight {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #footer {
+        display: none;
+    }
+    #mainServiceContainer {
+        height: calc(100% - 105px);
+    }
+}
+
+.container-box {
+    display: flex;
+    flex-direction: row;
+    max-height: 50vh;
+    min-height: 300px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-gap {
+    padding: 5px 10px 5px 5px;
+    margin: 5px 0px 10px 0px;
+    font-size: medium;
+}
+
+.pdf-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #36691c;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-button i {
+    margin-right: 8px;
+}
+
+.pdf-button:hover {
+    background-color: #0056b3;
+}
